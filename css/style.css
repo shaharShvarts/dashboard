@@ -1,0 +1,90 @@
+:root {
+  --accent: #759138;
+  --layout-navbar: #f1f1f1;
+  --active: #d3c2c2;
+}
+
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 18em 1fr;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas:
+    "layout-navbar layout-header"
+    "layout-navbar layout-pages";
+}
+
+/* layout-navbar */
+.layout-navbar {
+  grid-area: layout-navbar;
+  background-color: var(--layout-navbar);
+}
+
+.layout-navbar img {
+  width: 50%;
+  margin: 30px auto;
+}
+
+.layout-navbar a {
+  display: block;
+  padding: 15px 30px;
+  color: rgb(58, 55, 55);
+  transition: all 0.5s ease;
+}
+
+.layout-navbar a.active {
+  color: #fff;
+  padding: 15px 30px 15px 25px;
+  border-left: 5px solid var(--accent-color);
+  background-color: var(--active);
+}
+
+.layout-navbar nav a:hover {
+  background-color: #333;
+  color: #fff;
+  padding: 15px 30px 15px 25px;
+  border-left: 5px solid var(--accent-color);
+}
+
+.layout-navbar .fas {
+  display: inline-block;
+  width: 30px;
+  margin: 0 0.8rem;
+}
+
+/* layout-header */
+.layout-header {
+  grid-area: layout-header;
+  background-color: white;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.layout-header .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24px;
+  width: 150px;
+  margin: 0 30px;
+}
+
+.layout-header #avatar {
+  cursor: pointer;
+}
+
+.layout-header #messages {
+  cursor: pointer;
+}
+
+.layout-header #notifications {
+  cursor: pointer;
+}
+
+.layout-pages {
+  grid-area: layout-pages;
+  background-color: var(--active);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
